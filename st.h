@@ -37,6 +37,7 @@ enum glyph_attribute {
 	ATTR_WRAP       = 1 << 8,
 	ATTR_WIDE       = 1 << 9,
 	ATTR_WDUMMY     = 1 << 10,
+	ATTR_BOXDRAW    = 1 << 11,
 	ATTR_BOLD_FAINT = ATTR_BOLD | ATTR_FAINT,
 	ATTR_IMAGE      = 1 << 14,
 };
@@ -131,6 +132,14 @@ char *xstrdup(const char *);
 void kscrollup(const Arg *arg);
 void kscrolldown(const Arg *arg);
 
+int isboxdraw(Rune);
+ushort boxdrawindex(const Glyph *);
+#ifdef XFT_VERSION
+/* only exposed to x.c, otherwise we'll need Xft.h for the types */
+void boxdraw_xinit(Display *, Colormap, XftDraw *, Visual *);
+void drawboxes(int, int, int, int, XftColor *, XftColor *, const XftGlyphFontSpec *, int);
+#endif
+
 /* config.h globals */
 extern char *utmp;
 extern char *scroll;
@@ -212,3 +221,5 @@ static inline uint32_t tgetimgplacementid(Glyph *g) {
 static inline void tsetimgplacementid(Glyph *g, uint32_t id) {
 	g->decor = (id & 0xFFFFFF) | (1 << 24);
 }
+
+extern const int boxdraw, boxdraw_bold, boxdraw_braille;
