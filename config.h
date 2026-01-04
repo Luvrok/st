@@ -5,6 +5,7 @@ luvrok's st build
 
 patches applied (including some slight changes):
 st-expected-anysize-0.9.diff
+st-xresources-signal-reloading-20220407-ef05519.diff
 
 TODO (maybe someday):
 
