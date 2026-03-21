@@ -6,6 +6,7 @@ luvrok's st build
 patches applied (including some slight changes):
 st-expected-anysize-0.9.diff
 st-xresources-signal-reloading-20220407-ef05519.diff
+st-alpha-20240814-a0274bc.diff
 
 TODO (maybe someday):
 
@@ -16,8 +17,8 @@ TODO (maybe someday):
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMonoNL Nerd Font:pixelsize=15:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Source Code Pro:pixelsize=16:antialias=true:autohint=true";
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -103,6 +104,9 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
+
+/* bg opacity */
+float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
