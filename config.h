@@ -7,6 +7,7 @@ patches applied (including some slight changes):
 st-expected-anysize-0.9.diff
 st-xresources-signal-reloading-20220407-ef05519.diff
 st-alpha-20240814-a0274bc.diff
+st-changealpha-20251027-0.9.3.diff
 
 TODO (maybe someday):
 
@@ -105,7 +106,8 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
+/* Background opacity */
+float alpha_def;
 float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
@@ -216,6 +218,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ MODKEY,               XK_bracketleft, chgalpha,       {.f = -1} },
+	{ MODKEY|ShiftMask,     XK_braceright,  chgalpha,       {.f = +1} },
+	{ MODKEY,               XK_bracketright,chgalpha,       {.f =  0} },
 };
 
 /*
