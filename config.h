@@ -11,6 +11,7 @@ st-changealpha-20251027-0.9.3.diff
 st-scrollback-reflow-standalone-extended-0.9.3.diff
 st-font2-0.8.5.diff
 st-kitty-graphics-20251230-0.9.3.diff
+st-gruvbox-material-0.8.2.diff
 
 TODO (maybe someday):
 
@@ -23,9 +24,9 @@ TODO (maybe someday):
  */
 static char *font = "JetBrainsMonoNL NFP:size=12";
 static char *font2[] = {
-	"Noto Color Emoji:size=12",
-	"Font Awesome 6 Free Solid:size=12",
-	"Noto Sans CJK JP:size=12",
+// 	"Noto Color Emoji:size=12",
+// 	"Font Awesome 6 Free Solid:size=12",
+// 	"Noto Sans CJK JP:size=12",
 };
 
 static int borderpx = 5;

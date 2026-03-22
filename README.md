@@ -9,3 +9,4 @@ inspired by [bread's build](https://github.com/BreadOnPenguins/st), [vanilla st]
 * [scrollback-reflow-standalone (st-scrollback-reflow-standalone-extended-0.9.3.diff)](https://st.suckless.org/patches/scrollback-reflow-standalone/)
 * [font2 (st-font2-0.8.5.diff)](https://st.suckless.org/patches/font2/)
 * [Kitty Graphics Protocol (st-kitty-graphics-20251230-0.9.3.diff)](https://st.suckless.org/patches/kitty-graphics-protocol/)
+* [gruvbox (st-gruvbox-material-0.8.2.diff)](https://st.suckless.org/patches/gruvbox-material/) (with some mine changes)
