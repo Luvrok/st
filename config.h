@@ -9,6 +9,7 @@ st-xresources-signal-reloading-20220407-ef05519.diff
 st-alpha-20240814-a0274bc.diff
 st-changealpha-20251027-0.9.3.diff
 st-scrollback-reflow-standalone-extended-0.9.3.diff
+st-font2-0.8.5.diff
 
 TODO (maybe someday):
 
@@ -19,8 +20,13 @@ TODO (maybe someday):
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Source Code Pro:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 1;
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+/* Spare fonts */
+static char *font2[] = {
+/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+};
 
 /*
  * What program is execed by st depends of these precedence rules:
