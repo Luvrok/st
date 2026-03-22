@@ -20,13 +20,14 @@ TODO (maybe someday):
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static int borderpx = 1;
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-/* Spare fonts */
+static char *font = "JetBrainsMonoNL NFP:size=12";
 static char *font2[] = {
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+	"Noto Color Emoji:size=12",
+	"Font Awesome 6 Free Solid:size=12",
+	"Noto Sans CJK JP:size=12",
 };
+
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -111,7 +112,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 2;
 
 /* Background opacity */
 float alpha_def;
@@ -119,35 +120,34 @@ float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+  /* 8 normal colors */
+  "#171717", /* 0  black */
+  "#cc241d", /* 1  red */
+  "#98971a", /* 2  green */
+  "#d79921", /* 3  yellow */
+  "#458588", /* 4  blue */
+  "#d65d0e", /* 5  magenta */
+  "#689d6a", /* 6  cyan */
+  "#ebdbb2", /* 7  white */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+  /* 8 bright colors */
+  "#928374", /* 8  bright black (gray) */
+  "#fb4934", /* 9  bright red */
+  "#b8bb26", /* 10 bright green */
+  "#fabd2f", /* 11 bright yellow */
+  "#83a598", /* 12 bright blue */
+  "#d65d0e", /* 13 bright magenta */
+  "#8ec07c", /* 14 bright cyan */
+  "#a89984", /* 15 bright white */
 
-	[255] = 0,
+  [255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+  /* special */
+  "#d65d0e", /* 256 cursor */
+  "#171717", /* 257 reverse cursor */
+  "#ebdbb2", /* 258 default foreground */
+  "#171717", /* 259 default background */
 };
-
 
 /*
  * Default colors (colorname index)
@@ -156,7 +156,7 @@ static const char *colorname[] = {
 unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
@@ -213,6 +213,8 @@ static MouseShortcut mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
+	{ ControlMask,          XK_c,           clipcopy,       {.i = 0} },
+	{ ControlMask,          XK_v,           clippaste,      {.i = 0} },
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
