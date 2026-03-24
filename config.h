@@ -15,7 +15,18 @@ st-gruvbox-material-0.8.2.diff
 st-boxdraw_v2-0.8.5.diff
 
 TODO (maybe someday):
-
+https://st.suckless.org/patches/drag-n-drop/ (not sure about that one)
+https://st.suckless.org/patches/keyboard_select/ (not sure about that one)
+https://st.suckless.org/patches/externalpipe/ (very interesting idea)
+https://st.suckless.org/patches/externalpipe-signal/
+https://st.suckless.org/patches/fontmetrics/ (maybe can solve the problem with indicators in yazi)
+https://st.suckless.org/patches/hidecursor/
+https://st.suckless.org/patches/ligatures/
+https://st.suckless.org/patches/line_snap_delimiter/
+https://st.suckless.org/patches/workingdir/
+https://st.suckless.org/patches/themed_cursor/
+если ничего не выделено то ctrl + c должен делать signint вроде кароче отмена
+https://st.suckless.org/patches/preedit/
 */
 
 /*
@@ -23,7 +34,7 @@ TODO (maybe someday):
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMonoNL NFP:size=12";
+static char *font = "JetBrainsMonoNL Nerd Font:size=13";
 static char *font2[] = {
 // 	"Noto Color Emoji:size=12",
 // 	"Font Awesome 6 Free Solid:size=12",
